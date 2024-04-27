@@ -44,6 +44,7 @@ let all_product = [
     new_price: 50.0,
     old_price: 80.5,
   },
+  
   {
     id: 2,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",

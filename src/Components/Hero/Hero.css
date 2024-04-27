@@ -1,5 +1,6 @@
 .hero{
-    height: 140vh;
+    height: 169vh;
+    margin: -18px;
     background: linear-gradient(to right, #FFC0CB, #FFFFFF);
     display: flex;
     flex-direction: row;
