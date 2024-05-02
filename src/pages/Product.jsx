@@ -1,16 +1,24 @@
-// import React,{  useContext } from "react";;
-// import { ShopContext } from "../Context/ShopContext";
-// import {useParams} from 'react-router-dom';
 
-// const Product = () => {
-//   const {all_product}= useContext(ShopContext);
-//   const {productId}=useParams();
-//   const product=all_product.find((e)=>e.id===Number(productId));
-//   return (
+import React,{  useContext } from "react"
+  import { ShopContext } from "../Context/ShopContext"
+  import { useParams } from 'react-router-dom'
+  import Breadcrum from '../Components/BreadCrums/Breadcrum.jsx';
 
 
-//     <div></div>
-//   )
-// }
 
-// export default Product
+
+  const Product = () =>{
+    const {all_product}= useContext(ShopContext);
+   const {productId}=useParams();
+  const product=all_product.find((e)=>e.id===Number(productId)); 
+  return (
+
+     <div>
+        <Breadcrum product={product} />
+        <productdisplay product={product} />
+     </div>
+
+
+  )
+  }
+    export default Product
