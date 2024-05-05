@@ -1,12 +1,13 @@
 .shopcategory-products {
-  margin: 225px 89px;
+  margin: 109px 89px;
   display: grid;
- 
   gap: 176px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: end;
   justify-items: stretch;
-  row-gap: 220px;
+  row-gap: 252px;
+  column-gap: 10px;
+  margin-bottom: 302px;
 }
 .item-wrapper {
     width: 100%;

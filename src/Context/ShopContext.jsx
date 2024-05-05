@@ -5,8 +5,8 @@ import { useState } from 'react';
 export const ShopContext=createContext(null);
 
 const getDefaultCart=()=>{
-    let cart=0;
-    for(int index=0;i<all_product.length;i++)
+    let cart={};
+    for(let index=0;index<all_product.length;index++)
     {
         cart[index]=0;
     }
@@ -14,17 +14,46 @@ const getDefaultCart=()=>{
 }
 const ShopContextProvider=(props)=>{
 
-    const [cartItems,setCartItems]-useState(getDefaultCart());
+    const [cartItems,setCartItems]=useState(getDefaultCart());
 
-    const contextvalue={all_product,cartItems};
-  console.log(cartItems)
-
+  
+    
     const addToCart=(itemId)=>{
-        setCartItems((prev)=>({..prev,[itemId]:prev[itemId]+1}))
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        console.log(cartItems);
     }
     const removefromCart=(itemId)=>{
-        setCartItems((prev)=>({..prev,[itemId]:prev[itemId]-1}))
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
+
+
+    const getTotalCartAmount=()=>{
+        let totalamount=0;
+        for (const item in cartItems)
+        {
+            if(cartItems[item]>0)
+            {
+                let iteminfo=all_product.find((product)=>product.id===Number(item));
+                totalamount+=iteminfo.new_price*cartItems[item];
+            }
+        }
+        return totalamount;
+        console.log(totalamount);     
+    }
+
+    const getTotalItems=()=>{
+        let totalitems=0;
+        for(const item in cartItems)
+        {
+            if(cartItems[item]>0)
+            {
+            totalitems+=cartItems[item];
+            }
+        }
+        return totalitems;
+
+    }
+    const contextvalue={getTotalItems,getTotalCartAmount,all_product,cartItems,addToCart,removefromCart};
 
 
     return(

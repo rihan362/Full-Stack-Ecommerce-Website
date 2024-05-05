@@ -10,6 +10,8 @@ import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
 import LoginSignup from './pages/LoginSignup.jsx'
+import Cart from './pages/Cart.jsx'
+
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
         <Route path="/product" element={<Product/>}>
          <Route path=':productId' element={<Product/>}/>
         </Route>
-         <Route path="/cart" element={<cart/>}/>
+         <Route path="/cart" element={<Cart/>}/>
          <Route path="/login" element={<LoginSignup/>}/>
 
        </Routes>
